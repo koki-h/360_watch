@@ -11,7 +11,7 @@ def upcoming_schedules
 
   doc = Nokogiri::HTML.parse(html, nil, charset)
   schedules = []
-  doc.css(".events-bottom").each do |e|
+  doc.css(".events-right").each do |e|
     day,wd,time,title =  e.text.scan(/(\d+\/\d+) (.) (.) \n(.+)$/m).flatten
     title.gsub!(/\s/,"")
     schedules << [day,wd,time,title]
