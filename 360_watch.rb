@@ -3,7 +3,7 @@ require 'nokogiri'
 require './slack.rb'
 
 URL_360 = "https://360.lmlab.net/"
-MD_QUOTE = "\\`\\`\\`\n"
+MD_QUOTE = "```\n"
 def upcoming_schedules
   html, charset = open(URL_360) do |page|
    [page.read, page.charset]
